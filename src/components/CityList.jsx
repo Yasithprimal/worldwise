@@ -3,8 +3,11 @@ import styles from "./CityList.module.css";
 import Spinner from "./Spinner";
 import Message from "./Message";
 import PropTypes from "prop-types";
+import { useCities } from "../contexts/CitiesContext";
+// import { useContext } from "react";
 
-function CityList({ cities, isLoading }) {
+function CityList() {
+  const { cities, isLoading } = useCities();
   if (isLoading) return <Spinner />;
 
   if (!cities.length)
@@ -20,6 +23,7 @@ function CityList({ cities, isLoading }) {
     </div>
   );
 }
+
 CityList.propTypes = {
   cities: PropTypes.array.isRequired,
   isLoading: PropTypes.bool.isRequired,
