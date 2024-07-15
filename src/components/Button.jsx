@@ -11,7 +11,7 @@ function Button({ children, onClick, type }) {
 
 Button.propTypes = {
   children: PropTypes.any.isRequired,
-  onClick: PropTypes.any.isRequired,
+  onClick: PropTypes.any,
   type: PropTypes.any.isRequired,
 };
 

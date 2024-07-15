@@ -1,8 +1,9 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 
-export function useGeolocation() {
+export function useGeolocation(defaultPosition = null) {
   const [isLoading, setIsLoading] = useState(false);
-  const [position, setPosition] = useState({});
+  const [position, setPosition] = useState(defaultPosition);
   const [error, setError] = useState(null);
 
   function getPosition() {
@@ -26,3 +27,7 @@ export function useGeolocation() {
   }
   return { isLoading, position, error, getPosition };
 }
+
+useGeolocation.propTypes = {
+  defaultPosition: PropTypes.any,
+};

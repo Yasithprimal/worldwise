@@ -31,8 +31,8 @@ function CountryList() {
   );
 }
 CountryList.propTypes = {
-  cities: PropTypes.array.isRequired,
-  isLoading: PropTypes.bool.isRequired,
+  cities: PropTypes.array,
+  isLoading: PropTypes.bool,
 };
 
 export default CountryList;
